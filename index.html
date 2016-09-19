@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reflect - NewTech Portland</title>
+    <script type="text/javascript" src="https://cdn.reflect.io/latest/reflect.js"></script>
+    <link rel="stylesheet" href="https://cdn.reflect.io/latest/reflect.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div id="view1">
+      </div>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    const REFLECT_API_TOKEN = 'adb30a82-ab3a-4036-85d7-ad5584b97acf',
+          ui = new ReflectUI(REFLECT_API_TOKEN),
+          projectSlug = 'newtech',
+          viewSlug = 'newtech-dashboard';
+
+    var render = function(view) {
+      ui.view(document.getElementById('view1'), projectSlug, view);
+    }
+
+    render(viewSlug)
+  </script>
+</html>

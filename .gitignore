@@ -1,0 +1,8 @@
+# Ignore dev stuff
+*.sw[onp]
+/node_modules
+
+# Ignore non-boilerplate stuff
+/data_model.json
+/credential.json
+/project.json
