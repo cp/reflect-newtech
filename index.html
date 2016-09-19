@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Reflect - NewTech Portland</title>
-    <script type="text/javascript" src="https://cdn.reflect.io/latest/reflect.js"></script>
-    <link rel="stylesheet" href="https://cdn.reflect.io/latest/reflect.css" />
+    <script type="text/javascript" src="https://cdn.reflect.io/0.1.100/reflect.js"></script>
+    <link rel="stylesheet" href="https://cdn.reflect.io/0.1.100/reflect.css" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
   </head>
@@ -22,6 +22,15 @@
           viewSlug = 'newtech-dashboard';
 
     var render = function(view) {
+      ui.on('bars-component-2', 'dataPointClick', function(data) {
+        var fieldValue = data.rowData['Topic name'],
+          filters = [{field: 'Topic name', op: '=', value: fieldValue, removable: true}];
+
+        ui.withFilters(filters);
+
+        render(view);
+      })
+
       ui.view(document.getElementById('view1'), projectSlug, view);
     }
 
